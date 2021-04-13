@@ -15,6 +15,7 @@ enum planck_layers {
  *  Or you can use XXXXXXX for KC_NO (NOOP)                  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+#undef TAPPING_TOGGLE
 #define TAPPING_TOGGLE 2
 #define PERMISSIVE_HOLD
 
@@ -25,7 +26,7 @@ enum planck_layers {
 #define PREV_TAB LGUI(KC_LCBR)
 #define NEXT_TAB LGUI(KC_RCBR)
 
-#define CTRL_TAB LCTL_T(KC_TAB)
+#define CTRL_ESC LCTL_T(KC_ESC)
 #define SHFT_GRV LSFT_T(KC_GRV)
 #define SHFT_SPC LSFT_T(KC_SPC)
 #define GUI_SLSH RGUI_T(KC_SLSH)
@@ -42,14 +43,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  FN  |   ⌃  |   ⌥  |   ⌘  |Lower |    Space    |Raise |   /  | Left | Down |Right |
+ * |  FN  |   /  |   ⌃  |   ⌥  |   ⌘  |    Space    |Lower |Raise | Left | Down |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_mit(
-    KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,     KC_U,    KC_I,     KC_O,    KC_P,    KC_BSPC,
-    CTRL_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,     KC_J,    KC_K,     KC_L,    KC_SCLN, KC_QUOT,
+    KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,     KC_U,    KC_I,     KC_O,    KC_P,    KC_BSPC,
+    CTRL_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,     KC_J,    KC_K,     KC_L,    KC_SCLN, KC_QUOT,
     SHFT_GRV,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_N,     KC_M,    KC_COMM,  KC_DOT,  KC_UP,   KC_SFTENT,
-    FN_LAYER,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SHFT_SPC,           RAISE,   GUI_SLSH, KC_LEFT, KC_DOWN, KC_RGHT
+    FN_LAYER,  KC_SLSH, KC_LCTL, KC_LALT, KC_LGUI, SHFT_SPC,           LOWER,   RAISE,    KC_LEFT, KC_DOWN, KC_RGHT
 ),
 
 /* Lower
@@ -96,14 +97,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      | ⇧⌥⌘v |      |      |      |      |      |brgh- |brgh+ |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      | prev |  play/pause | next |      | vol- | mute | vol+ |
+ * |      |      |      |      |      |  play/pause | prev | next | vol- | mute | vol+ |
  * `-----------------------------------------------------------------------------------'
  */
 [_FN] = LAYOUT_planck_mit(
     XXXXXXX, RESET,   XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL,
     XXXXXXX, KC_F1,   KC_F2,   KC_F3,    KC_F4,    KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  MEGA_PST, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX,  KC_MRWD,  KC_MPLY,          KC_MFFD, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU
+    _______, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  KC_MPLY,          KC_MRWD, KC_MFFD, KC_VOLD, KC_MUTE, KC_VOLU
 )
 
 };
