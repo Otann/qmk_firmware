@@ -22,6 +22,7 @@ enum planck_layers {
 #define LOWER TT(_LOWER)
 #define RAISE TT(_RAISE)
 #define FN_LAYER MO(_FN)
+#define LANG_SW LALT(KC_SPC)
 
 #define PREV_TAB LGUI(KC_LCBR)
 #define NEXT_TAB LGUI(KC_RCBR)
@@ -50,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,     KC_U,    KC_I,     KC_O,    KC_P,    KC_BSPC,
     CTRL_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,     KC_J,    KC_K,     KC_L,    KC_SCLN, KC_QUOT,
     SHFT_GRV,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_N,     KC_M,    KC_COMM,  KC_DOT,  KC_UP,   KC_SFTENT,
-    FN_LAYER,  KC_SLSH, KC_LCTL, KC_LALT, KC_LGUI, SHFT_SPC,           LOWER,   RAISE,    KC_LEFT, KC_DOWN, KC_RGHT
+    FN_LAYER,  LANG_SW, KC_LCTL, KC_LALT, KC_LGUI, SHFT_SPC,           LOWER,   RAISE,    KC_LEFT, KC_DOWN, KC_RGHT
 ),
 
 /* Lower
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |   \  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TRNS |      |      |      |      |      |      |      |      |      |      |      |
+ * | TRNS |      |      |      |      |      |      |      |      |   /  |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | TRNS | TRNS | TRNS | TRNS |     Del     | TRNS | TRNS |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -67,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_mit(
     XXXXXXX, XXXXXXX, PREV_TAB, NEXT_TAB, XXXXXXX, XXXXXXX, XXXXXXX, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, XXXXXXX,
     KC_GRV,  KC_1,    KC_2,     KC_3,     KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
-    _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLSH, XXXXXXX, XXXXXXX,
     XXXXXXX, _______, _______,  _______,  _______, KC_BSPC,          _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
@@ -77,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |  &   |  *   |   (  |   )  |   |  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TRNS |      |      |      |      |      |      |      |      |      |      |      |
+ * | TRNS |      |      |      |      |      |      |      |      |   ?  |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | TRNS | TRNS | TRNS | TRNS |     Bksp    | TRNS | TRNS |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -85,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_planck_mit(
     XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, XXXXXXX,
     KC_TILD, KC_EXLM, KC_AT,    KC_HASH,  KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
-    _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUES, XXXXXXX, XXXXXXX,
     XXXXXXX, _______, _______,  _______,  _______, KC_DEL,           _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
